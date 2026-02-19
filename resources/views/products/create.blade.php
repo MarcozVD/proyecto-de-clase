@@ -1,19 +1,12 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Vender Producto - TIENDA AZUL</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
-</head>
-<body>
+@extends('layouts.app')
 
-    @include('layouts.navbar')
+@section('title', 'Vender Producto - TIENDA AZUL')
 
-    <div class="container">
-        <h1 style="text-align: center; margin-bottom: 30px;">✨ Vender tu Producto</h1>
+@section('content')
 
-        <div class="form-container">
+<h1 style="text-align: center; margin-bottom: 30px;">✨ Vender tu Producto</h1>
+
+<div class="form-container">
             <form action="{{ route('products.store') }}" method="POST">
                 @csrf
 
@@ -72,9 +65,5 @@
                 </div>
             </form>
         </div>
-    </div>
 
-    @include('layouts.footer')
-
-</body>
-</html>
+@endsection

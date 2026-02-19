@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ $product->name }} - TIENDA AZUL</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
-</head>
-<body>
+@extends('layouts.app')
 
-    @include('layouts.navbar')
+@section('title', $product->name . ' - TIENDA AZUL')
 
-    <div class="container">
-        <a href="{{ route('products.index') }}" class="back-link">← Volver a Productos</a>
+@section('content')
+
+<a href="{{ route('products.index') }}" class="back-link">← Volver a Productos</a>
 
         <div class="product-detail-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; padding: 30px;">
             <!-- Imagen -->
@@ -102,9 +95,5 @@
                 </div>
             </div>
         </div>
-    </div>
 
-    @include('layouts.footer')
-
-</body>
-</html>
+@endsection
