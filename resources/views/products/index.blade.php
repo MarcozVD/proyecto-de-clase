@@ -1,8 +1,21 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tienda de Productos - TIENDA AZUL</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
+</head>
+<body>
 
-@section('title', 'Tienda de Productos - TIENDA AZUL')
+    @include('layouts.navbar')
 
-@section('content')
+    <div class="container">
+        @if($message = Session::get('success'))
+            <div class="alert alert-success">
+                ✓ {{ $message }}
+            </div>
+        @endif
 
 <div style="margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
     <h1 style="margin: 0;">🔥 Ofertas del Día</h1>
@@ -40,4 +53,9 @@
     </div>
 @endif
 
-@endsection
+    </div>
+
+    @include('layouts.footer')
+
+</body>
+</html>
