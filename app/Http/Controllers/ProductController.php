@@ -28,7 +28,13 @@ class ProductController extends Controller
             'price' => 'required|numeric|min:0',
             'details' => 'required|string',
             'category_id' => 'required|exists:categories,id',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
+
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('products', 'public');
+            $validated['image'] = $imagePath;
+        }
 
         Product::create($validated);
         return redirect()->route('products.index')->with('success', 'Producto creado correctamente');

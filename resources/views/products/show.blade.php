@@ -8,10 +8,19 @@
 
         <div class="product-detail-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; padding: 30px;">
             <!-- Imagen -->
-            <div class="product-detail-image">📦</div>
+            <div class="product-detail-image">
+                @if($product->image)
+                    <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                @else
+                    📦
+                @endif
+            </div>
 
             <!-- Información -->
             <div class="product-detail-info" style="padding: 0;">
+                <div style="background: #e3f2fd; color: #0052a3; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 700; display: inline-block; margin-bottom: 10px;">
+                    🏷️ {{ $product->category->name ?? 'Sin categoría' }}
+                </div>
                 <h1 style="margin-top: 0; font-size: 26px;">{{ $product->name }}</h1>
 
                 <!-- Rating -->

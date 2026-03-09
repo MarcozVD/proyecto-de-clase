@@ -7,7 +7,7 @@
 <h1 style="text-align: center; margin-bottom: 30px;">✨ Vender tu Producto</h1>
 
 <div class="form-container">
-            <form action="{{ route('products.store') }}" method="POST">
+            <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 <div class="form-group">
@@ -52,6 +52,19 @@
                         @endforeach
                     </select>
                     @error('category_id')
+                        <span style="color: #0052a3; font-size: 12px; display: block; margin-top: 5px;">{{ $message }}</span>
+                    @enderror
+                </div>
+
+                <div class="form-group">
+                    <label for="image">Imagen del Producto</label>
+                    <input 
+                        type="file" 
+                        id="image"
+                        name="image" 
+                        accept="image/*"
+                    >
+                    @error('image')
                         <span style="color: #0052a3; font-size: 12px; display: block; margin-top: 5px;">{{ $message }}</span>
                     @enderror
                 </div>

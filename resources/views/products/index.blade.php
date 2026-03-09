@@ -19,7 +19,13 @@
     <div class="grid">
         @foreach($products as $product)
             <div class="card">
-                <div class="product-image">📦</div>
+                <div class="product-image">
+                    @if($product->image)
+                        <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" style="width: 100%; height: 100%; object-fit: cover;">
+                    @else
+                        📦
+                    @endif
+                </div>
                 
                 <div class="product-info">
                     <div class="product-name">{{ $product->name }}</div>
