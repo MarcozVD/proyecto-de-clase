@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Category;
 
 class ProductController extends Controller
 {
     public function index(){
         
-        $products = Product::limit(50)->get();
+        $products = Product::limit(50)->orderBy('id','desc')->get();
         
         return view("products.index",[
             'misProductos'=>$products
@@ -17,7 +18,8 @@ class ProductController extends Controller
     }
 
     public function create(){
-        return view("products.create");
+        $categories = Category::all();
+        return view("products.create", compact('categories'));
     }
 
     public function store(Request $request){
@@ -25,6 +27,7 @@ class ProductController extends Controller
             'name' => 'required|string|max:255',
             'price' => 'required|numeric|min:0',
             'details' => 'required|string',
+            'category_id' => 'required|exists:categories,id',
         ]);
 
         Product::create($validated);

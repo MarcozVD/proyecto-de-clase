@@ -42,6 +42,21 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="category_id">Categoría</label>
+                    <select id="category_id" name="category_id" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; background-color: white;">
+                        <option value="" disabled selected>Selecciona una categoría</option>
+                        @foreach($categories as $category)
+                            <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>
+                                {{ $category->name }}
+                            </option>
+                        @endforeach
+                    </select>
+                    @error('category_id')
+                        <span style="color: #0052a3; font-size: 12px; display: block; margin-top: 5px;">{{ $message }}</span>
+                    @enderror
+                </div>
+
+                <div class="form-group">
                     <label for="details">Descripción del Producto</label>
                     <textarea 
                         id="details"
