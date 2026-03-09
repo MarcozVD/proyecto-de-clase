@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class CardItem extends Model
 {   
     use HasFactory; 
-    protected $table='cart_items';
+    protected $table='card_items';
 }

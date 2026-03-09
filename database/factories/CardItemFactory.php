@@ -19,7 +19,7 @@ class CardItemFactory extends Factory
         return [
             "user_id"=>User::inRandomOrder()->first()->id,
             "product_id"=>Product::inRandomOrder()->first()->id,
-            "quantituy"=>fake()->numberBetween(1,5),
+            "quantity"=>fake()->numberBetween(1,5),
         ];
     }
 }

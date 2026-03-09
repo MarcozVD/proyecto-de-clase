@@ -23,9 +23,9 @@ class DatabaseSeeder extends Seeder
             ProductSeeder::class
         ]);*/
 
-        //Category::factory(10000)->create();
+        Category::factory(1000)->create();
         User::factory(1000)->create();
-        //Product::factory(100000)->create();
-        CardItem::factory(20000)->create();
+        Product::factory(1000)->create();
+        CardItem::factory(2000)->create();
     }
 }

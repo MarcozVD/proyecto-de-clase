@@ -8,8 +8,12 @@ use App\Models\Product;
 class ProductController extends Controller
 {
     public function index(){
-        $products = Product::all();
-        return view("products.index", compact('products'));
+        
+        $products = Product::limit(50)->get();
+        
+        return view("products.index",[
+            'misProductos'=>$products
+        ],compact('products'));
     }
 
     public function create(){
