@@ -6,7 +6,10 @@
 
 <div style="margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
     <h1 style="margin: 0;">🛠️ Administrar Productos</h1>
-    <a href="{{ route('products.create') }}" class="btn">+ Agregar Producto Nuevo</a>
+    <div>
+        <a href="{{ route('admin.categories.index') }}" class="btn btn-secondary" style="margin-right: 10px;">🏷️ Gestionar Categorías</a>
+        <a href="{{ route('products.create') }}" class="btn">+ Agregar Producto Nuevo</a>
+    </div>
 </div>
 
 @if(session('success'))
