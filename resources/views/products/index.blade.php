@@ -37,7 +37,13 @@
                         <span class="stars">★★★★★</span> (248)
                     </div>
 
-                    <a href="{{ route('products.show', $product) }}" class="btn-view">Ver Detalles</a>
+                    <div style="display: flex; gap: 10px;">
+                        <a href="{{ route('products.show', $product) }}" class="btn-view" style="flex: 1;">Ver Detalles</a>
+                        <form action="{{ route('cart.add', $product) }}" method="POST" style="flex: 1;">
+                            @csrf
+                            <button type="submit" class="btn" style="width: 100%; padding: 8px; font-size: 13px;">🛒 Añadir</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         @endforeach

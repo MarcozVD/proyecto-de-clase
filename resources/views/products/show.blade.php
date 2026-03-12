@@ -63,9 +63,12 @@
 
                 <!-- Botones de acción -->
                 <div class="btn-group" style="gap: 10px;">
-                    <button class="btn" style="flex: 1; padding: 14px; font-size: 15px; font-weight: 700;">
-                        COMPRAR AHORA
-                    </button>
+                    <form action="{{ route('cart.add', $product) }}" method="POST" style="flex: 1; display: flex;">
+                        @csrf
+                        <button type="submit" class="btn" style="flex: 1; padding: 14px; font-size: 15px; font-weight: 700;">
+                            AÑADIR AL CARRITO
+                        </button>
+                    </form>
                     <button class="btn btn-secondary" style="flex: 1; padding: 14px; font-size: 15px; font-weight: 700;">
                             GUARDAR
                     </button>

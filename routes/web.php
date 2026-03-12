@@ -35,3 +35,12 @@ Route::prefix("admin")->group(function(){
     });
 });
 
+// Cart routes
+Route::prefix("cart")->controller(App\Http\Controllers\CartController::class)->group(function(){
+    Route::get('/', "index")->name('cart.index');
+    Route::post('/add/{product}', "add")->name('cart.add');
+    Route::patch('/update/{product}', "update")->name('cart.update');
+    Route::delete('/remove', "remove")->name('cart.remove');
+    Route::delete('/clear', "clear")->name('cart.clear');
+});
+
