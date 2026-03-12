@@ -11,5 +11,6 @@ Route::prefix("product")->controller(ProductController::class)->group(function()
     Route::get('/create',"create")->name('products.create');
     Route::post('/',"store")->name('products.store');
     Route::get('/{product}',"show")->name('products.show');
+    
 });
 

@@ -18,7 +18,7 @@
                         name="name" 
                         value="{{ old('name') }}"
                         placeholder="Ej: Auriculares Inalámbricos"
-                        required
+                        
                     >
                     @error('name')
                         <span style="color: #0052a3; font-size: 12px; display: block; margin-top: 5px;">{{ $message }}</span>
@@ -34,7 +34,7 @@
                         name="price"
                         value="{{ old('price') }}"
                         placeholder="Ej: 29.99"
-                        required
+                        
                     >
                     @error('price')
                         <span style="color: #0052a3; font-size: 12px; display: block; margin-top: 5px;">{{ $message }}</span>
@@ -43,7 +43,7 @@
 
                 <div class="form-group">
                     <label for="category_id">Categoría</label>
-                    <select id="category_id" name="category_id" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; background-color: white;">
+                    <select id="category_id" name="category_id"  style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; background-color: white;">
                         <option value="" disabled selected>Selecciona una categoría</option>
                         @foreach($categories as $category)
                             <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>
@@ -78,7 +78,7 @@
                         name="details" 
                         rows="8" 
                         placeholder="Describe todas las características, especificaciones, materiales, etc."
-                        required
+                        
                     >{{ old('details') }}</textarea>
                     @error('details')
                     
