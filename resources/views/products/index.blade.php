@@ -6,14 +6,12 @@
 
 <div style="margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
     <h1 style="margin: 0;">🔥 Ofertas del Día</h1>
-    <a href="{{ route('products.create') }}" class="btn">+ Agregar Producto</a>
 </div>
 
 @if($products->isEmpty())
     <div class="card" style="text-align: center; padding: 80px 20px;">
         <h2 style="margin-bottom: 10px;">📭 No hay productos</h2>
-        <p style="margin: 15px 0; color: #999; font-size: 14px;">Sé el primero en agregar un producto increíble</p>
-        <a href="{{ route('products.create') }}" class="btn" style="margin-top: 20px;">+ Crear Producto</a>
+        <p style="margin: 15px 0; color: #999; font-size: 14px;">Próximamente tendremos productos increíbles para ti</p>
     </div>
 @else
     <div class="grid">
@@ -40,19 +38,6 @@
                     </div>
 
                     <a href="{{ route('products.show', $product) }}" class="btn-view">Ver Detalles</a>
-                    
-                    <div class="btn-group-sm">
-                        <a href="{{ route('products.edit', $product) }}" class="btn-edit">
-                            ✏️ Editar
-                        </a>
-                        <form action="{{ route('products.destroy', $product) }}" method="POST" style="flex: 1; display: flex;">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn-delete" onclick="return confirm('¿Estás seguro de eliminar este producto?')">
-                                🗑️ Borrar
-                            </button>
-                        </form>
-                    </div>
                 </div>
             </div>
         @endforeach

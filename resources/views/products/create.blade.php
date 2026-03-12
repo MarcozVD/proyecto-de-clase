@@ -90,7 +90,7 @@
                     <button type="submit" class="btn" style="flex: 1; padding: 12px; font-size: 15px;">
                         ✓ Publicar Producto
                     </button>
-                    <a href="{{ route('products.index') }}" class="btn btn-secondary" style="flex: 1; padding: 12px; text-align: center; font-size: 15px;">
+                    <a href="{{ route('admin.products.index') }}" class="btn btn-secondary" style="flex: 1; padding: 12px; text-align: center; font-size: 15px;">
                         ✕ Cancelar
                     </a>
                 </div>

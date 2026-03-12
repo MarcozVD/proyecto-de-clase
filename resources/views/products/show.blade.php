@@ -76,9 +76,6 @@
                     <a href="{{ route('products.index') }}" class="btn btn-secondary" style="flex: 1; padding: 10px; text-align: center; font-size: 14px;">
                         ← Continuar Comprando
                     </a>
-                    <a href="{{ route('products.create') }}" class="btn" style="flex: 1; padding: 10px; text-align: center; font-size: 14px;">
-                        + Vender Similar
-                    </a>
                 </div>
             </div>
 
