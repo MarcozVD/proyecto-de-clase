@@ -64,10 +64,10 @@
                 <!-- Botones de acción -->
                 <div class="btn-group" style="gap: 10px;">
                     <button class="btn" style="flex: 1; padding: 14px; font-size: 15px; font-weight: 700;">
-                        🛒 COMPRAR AHORA
+                        COMPRAR AHORA
                     </button>
                     <button class="btn btn-secondary" style="flex: 1; padding: 14px; font-size: 15px; font-weight: 700;">
-                        ❤️ GUARDAR
+                            GUARDAR
                     </button>
                 </div>
 
@@ -81,6 +81,7 @@
                     </a>
                 </div>
             </div>
+
         </div>
 
         <!-- Reseñas (Sección decorativa) -->
