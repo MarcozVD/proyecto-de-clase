@@ -39,7 +39,20 @@
                         <span class="stars">★★★★★</span> (248)
                     </div>
 
-                    <a href="{{ route('products.show', $product) }}" class="btn-view">Ver</a>
+                    <a href="{{ route('products.show', $product) }}" class="btn-view">Ver Detalles</a>
+                    
+                    <div class="btn-group-sm">
+                        <a href="{{ route('products.edit', $product) }}" class="btn-edit">
+                            ✏️ Editar
+                        </a>
+                        <form action="{{ route('products.destroy', $product) }}" method="POST" style="flex: 1; display: flex;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn-delete" onclick="return confirm('¿Estás seguro de eliminar este producto?')">
+                                🗑️ Borrar
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         @endforeach
