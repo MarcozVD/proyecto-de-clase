@@ -52,6 +52,7 @@
                         @endforeach
                     </select>
                     @error('category_id')
+
                         <span style="color: #0052a3; font-size: 12px; display: block; margin-top: 5px;">{{ $message }}</span>
                     @enderror
                 </div>
@@ -65,6 +66,7 @@
                         accept="image/*"
                     >
                     @error('image')
+
                         <span style="color: #0052a3; font-size: 12px; display: block; margin-top: 5px;">{{ $message }}</span>
                     @enderror
                 </div>
@@ -79,6 +81,7 @@
                         required
                     >{{ old('details') }}</textarea>
                     @error('details')
+                    
                         <span style="color: #0052a3; font-size: 12px; display: block; margin-top: 5px;">{{ $message }}</span>
                     @enderror
                 </div>

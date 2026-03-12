@@ -10,7 +10,7 @@ class ProductController extends Controller
 {
     public function index(){
         
-        $products = Product::limit(50)->orderBy('id','desc')->get();
+        $products = Product::limit(50)->orderBy('id','asc')->get();
         
         return view("products.index",[
             'misProductos'=>$products
@@ -29,6 +29,7 @@ class ProductController extends Controller
             'details' => 'required|string',
             'category_id' => 'required|exists:categories,id',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            
         ]);
 
         if ($request->hasFile('image')) {
